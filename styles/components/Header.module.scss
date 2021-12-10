@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: center;
+  height: var(--header-height);
+
+  .headerContainer {
+    max-width: 975px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      display: flex;
+      flex: 1 0 127px;
+      align-items: center;
+    }
+    .search {
+      display: flex;
+      flex: 0 1 auto;
+    }
+    .menu {
+      display: flex;
+      flex: 1 0 127px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+}
