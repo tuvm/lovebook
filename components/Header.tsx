@@ -15,7 +15,9 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.headerContainer}>
-        <div className={styles.logo}><Image width="100" height="30" src={logo} alt="logo" /></div>
+        <div className={styles.logo}>
+          <Image width="100" height="30" src={logo} alt="logo" />
+        </div>
         <div className={styles.search}>
           <Input
             prefix={<SearchOutlined style={{ color: '#d9d9d9' }} />}
@@ -32,7 +34,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default Header;
