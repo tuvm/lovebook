@@ -1,7 +1,9 @@
 import React from 'react';
+import Image from 'next/image';
 import { Menu, Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import styles from '../styles/components/Header.module.scss';
+import logo from '../public/images/lovebook.png';
 
 React.useLayoutEffect = React.useEffect;
 
@@ -13,12 +15,12 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.headerContainer}>
-        <div className={styles.logo}>Lovebook</div>
+        <div className={styles.logo}><Image width="100" height="30" src={logo} alt="logo" /></div>
         <div className={styles.search}>
           <Input
-            prefix={<SearchOutlined />}
+            prefix={<SearchOutlined style={{ color: '#d9d9d9' }} />}
             placeholder="Search"
-            style={{ width: 200, height: 32 }}
+            style={{ width: 268, minWidth: 125, height: 33 }}
           />
         </div>
         <div className={styles.menu}>

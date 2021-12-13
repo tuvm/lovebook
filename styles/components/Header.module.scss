@@ -2,9 +2,11 @@
   display: flex;
   justify-content: center;
   height: var(--header-height);
+  border-bottom: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
 
   .headerContainer {
     max-width: 975px;
+    padding: 0 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
