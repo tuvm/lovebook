@@ -2,10 +2,36 @@
   min-height: 100vh;
 }
 
-.main {
+.page {
   flex: 1;
   display: flex;
   flex-direction: column;
   /* justify-content: center;
   align-items: center; */
+}
+
+.main {
+  display: flex;
+  align-items: stretch;
+}
+
+.mainContainer {
+  max-width: 935px;
+  background-color: rgba(var(--b3f, 250, 250, 250), 1);
+
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+    margin-bottom: 30px;
+    padding: 0;
+    top: calc(34px + var(--desktop-nav-height));
+    max-width: 293px;
+    width: 100%;
+  }
+  .content {
+    max-width: 614px;
+    width: 100%;
+    margin-right: 28px;
+    float: left;
+  }
 }
