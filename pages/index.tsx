@@ -3,24 +3,26 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import useWindowSize from '../hooks/useWindowSize';
-import { Post } from './api/posts';
+import { DocumentData, QueryDocumentSnapshot } from '@firebase/firestore';
+import postService from '../firebase/services/post.service';
 import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
   const { width } = useWindowSize();
-  const [data, setData] = useState<Post>();
+  const [posts, setPosts] = useState<QueryDocumentSnapshot<DocumentData>[]>([]);
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const response = await fetch('/api/posts');
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status}`);
-    }
-    const posts = await response.json();
-    console.log(posts);
-    return setData(posts);
+    const querySnapshot = await postService.getAll();
+
+    const result: QueryDocumentSnapshot<DocumentData>[] = [];
+    querySnapshot.forEach((snapshot) => {
+      result.push(snapshot);
+    });
+    console.log(result[0].data());
+    setPosts(result);
   };
 
   return (
