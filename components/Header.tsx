@@ -10,6 +10,7 @@ React.useLayoutEffect = React.useEffect;
 const Header = () => {
   const onSearch = (value: String) => {
     console.log(value);
+    console.log('hello');
   };
 
   return (
